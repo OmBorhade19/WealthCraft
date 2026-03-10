@@ -1,0 +1,6 @@
+Nominal FV (Annuity Due): 7568639.992664599
+Method 1 (Discount Final Value by Annual Inflation): 3158129.0262246346
+Method 1b (Discount Final Value by Monthly Inflation): 3084087.790741825
+Method 2 (Fisher Equation applied to Monthly Rate, assuming constant Real Deposits): 4372847.334269322
+Method 3 (True Real Value of Nominal Cash Flows): 3084087.790741826
+Method 4 (Our Current Implementation): 4238238.15469957

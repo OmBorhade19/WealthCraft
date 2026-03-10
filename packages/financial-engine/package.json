@@ -1,0 +1,16 @@
+{
+    "name": "@wealthcraft/financial-engine",
+    "version": "1.0.0",
+    "main": "./src/index.ts",
+    "types": "./src/index.ts",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc -w",
+        "lint": "eslint src/",
+        "test": "vitest run"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "vitest": "^1.0.0"
+    }
+}

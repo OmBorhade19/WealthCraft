@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+@layer base {
+  :root {
+    /* Premium Light Mode Palette */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 37 90% 55%;
+    /* Gold #F5A623 */
+    --primary-foreground: 220 43% 5%;
+
+    --secondary: 217 91% 60%;
+    /* Blue #3B82F6 */
+    --secondary-foreground: 226 100% 97%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 37 90% 55%;
+    --accent-foreground: 220 43% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 37 90% 55%;
+
+    --radius: 0.75rem;
+
+    --brand-gold: #F5A623;
+    --brand-gold-hover: #D97706;
+    /* Darker gold for light mode buttons */
+    --brand-blue: #2563EB;
+    /* Deep blue for better contrast */
+    --brand-dark-bg: #FCFCFD;
+    --brand-surface: #F8FAFC;
+    --brand-surface-border: #E2E8F0;
+    --brand-success: #059669;
+    --brand-danger: #DC2626;
+  }
+
+  /* Dark block disabled for Global Light Mode
+  .dark {
+    --background: 220 43% 5%;
+    --foreground: 226 100% 97%;
+    ...
+  }
+  */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-brand-darkBg text-foreground font-body antialiased;
+    /* Noise texture overlay via CSS */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(245, 166, 35, 0.4);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 166, 35, 1);
+  }
+
+  /* Remove number input spinners */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+/* Glassmorphism utility classes */
+@layer utilities {
+  .glass-card {
+    @apply bg-black/5 dark:bg-white/5 backdrop-blur-xl border border-black/10 dark:border-white/10 shadow-xl;
+  }
+
+  .glass-tooltip {
+    @apply bg-brand-surface/80 backdrop-blur-md border border-brand-surfaceBorder text-foreground dark:text-white p-3 rounded-lg shadow-xl;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gold-gradient;
+  }
+}
